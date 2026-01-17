@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Akshaya Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- ===== CSS START ===== -->
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Segoe UI', sans-serif;
+    }
+
+    :root{
+      --accent:#38bdf8;
+    }
+
+    body{
+      min-height:100vh;
+      background:linear-gradient(135deg,#0f172a,#020617);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    /* Background shapes */
+    .bg-circle{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(80px);
+      opacity:0.6;
+    }
+    .one{
+      width:300px;
+      height:300px;
+      background:#38bdf8;
+      top:-50px;
+      left:-50px;
+    }
+    .two{
+      width:350px;
+      height:350px;
+      background:#a855f7;
+      bottom:-80px;
+      right:-80px;
+    }
+
+    /* Container */
+    .container{
+      width:90%;
+      max-width:900px;
+      display:flex;
+      flex-direction:column;
+      gap:40px;
+      z-index:1;
+    }
+
+    /* Navbar */
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:20px;
+    }
+    nav a{
+      text-decoration:none;
+      color:#cbd5f5;
+      transition:0.3s;
+    }
+    nav a.active,
+    nav a:hover{
+      color:var(--accent);
+      font-weight:600;
+    }
+
+    /* Cards */
+    .card{
+      padding:35px;
+      background:rgba(255,255,255,0.08);
+      border-radius:20px;
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(255,255,255,0.15);
+      box-shadow:0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .center{
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    .profile{
+      width:200px;
+      height:200px;
+      border-radius:50%;
+      border:3px solid var(--accent);
+      margin-bottom:15px;
+      object-fit:cover;
+    }
+
+    h1 span{
+      color:var(--accent);
+    }
+
+    /* Buttons */
+    button{
+      margin-top:15px;
+      padding:10px 25px;
+      border:none;
+      border-radius:25px;
+      background:linear-gradient(135deg,#38bdf8,#a855f7);
+      font-weight:600;
+      cursor:pointer;
+      position:relative;
+      overflow:hidden;
+    }
+
+    button:hover{
+      transform:scale(1.05);
+    }
+
+    /* Certificates */
+    #certificates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+/* Heading */
+#certificates h2 {
+  grid-column: 1 / -1;
+  margin-bottom: 20px;
+}
+
+/* Each certificate card */
+.cert {
+  width: 800px;
+}
+
+/* Certificate image (if you use image) */
+.cert-img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+    /* Skills */
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+      margin-top:15px;
+      justify-content:center;
+    }
+    .skills span{
+      padding:8px 18px;
+      border-radius:20px;
+      border:1px solid var(--accent);
+      color:var(--accent);
+    }
+
+    a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+    /* Ripple */
+    .ripple{
+      position:absolute;
+      width:20px;
+      height:20px;
+      background:rgba(255,255,255,0.6);
+      border-radius:50%;
+      transform:translate(-50%,-50%);
+      animation:ripple 0.6s linear;
+    }
+
+    @keyframes ripple{
+      to{
+        transform:scale(15);
+        opacity:0;
+      }
+    }
+  </style>
+  <!-- ===== CSS END ===== -->
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="bg-circle one"></div>
+  <div class="bg-circle two"></div>
+
+  <div class="container">
+
+    <!-- Navbar -->
+    <nav>
+      <h1>S.Akshaya</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Home -->
+    <section id="home" class="card center">
+      <img src="C:\Users\ADMIN\OneDrive\Pictures\my photo\Frame 1.jpg" class="profile" alt="Akshaya">
+      <h1>Hello, I'm <span>S. Akshaya</span></h1>
+      <p>B.Sc Computer Science Student</p>
+      <button onclick="showAlert()">Hire Me</button>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="card center">
+      <h2>About Me</h2>
+      <p>
+        I’m S. Akshaya,  a 2nd year B.Sc. Computer Science student at Vighya Sagar Women’s College, Chengalpattu, with a strong interest in technology and a growing passion for web development and UI/UX design.
+       I’m currently learning and strengthening my skills in HTML, CSS, and JavaScript, focusing on building clean, responsive, and user-friendly web interfaces. As a UI/UX learner, I enjoy understanding how users interact with interfaces and how thoughtful design improves usability. I apply these concepts through regular practice and academic exercises.
+ Along with web technologies, I also have basic knowledge of Java, which helps me understand core programming concepts and problem-solving techniques. I believe continuous learning and hands-on practice are essential to grow as a developer and UI/UX practitioner.
+I’m motivated, detail-oriented, and eager to gain real-world experience. My goal is to grow as a skilled software professional and UI/UX grower, by working on meaningful projects and continuously improving my technical and design abilities.
+      </p>
+    </section>
+
+    <!-- CERTIFICATES -->
+  <section id="certificates" class="card">
+  <h2>Certificates</h2>
+
+  <!-- 👇 ADD THIS WRAPPER -->
+  <div class="cert-container">
+
+    <div class="cert">
+      <p>Python for Data Science</p>
+      <a href="C:\Users\ADMIN\OneDrive\Pictures\Certificates\Python for Data Science.pdf" download><button>Download</button></a>
+    </div>
+
+    <div class="cert">
+      <p>FullStack Development</p>
+      <a href="C:\Users\ADMIN\OneDrive\Pictures\Certificates\Edureka - Internship Certificate.pdf" download><button>Download</button></a>
+    </div>
+
+    <div class="cert">
+      <p>Fundamental of Web Development</p>
+      <a href="C:\Users\ADMIN\OneDrive\Pictures\Certificates\NM_Certificate _fundamental of web development.pdf" download><button>Download</button></a>
+    </div>
+
+    <div class="cert">
+      <p>HDCA</p>
+      <a href="C:\Users\ADMIN\OneDrive\Pictures\Certificates\HDCA1.jpeg" download><button>Download</button></a>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Skills -->
+    <section id="skills" class="card center">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Python</span>
+        <span>Java</span>
+        <span>UI/UX</span>
+      </div>
+    </section>
+
+
+<!-- Where to Find Me-->
+ 
+    <a href="https://www.linkedin.com/in/ss-akshaya-88a6a4382" target="_blank">
+  <i class="linkedin-icon"></i>
+</a>
+
+
+    <!-- Contact -->
+    <section id="contact" class="card center">
+      <h2>Contact Me</h2>
+      <p>Email: ssakshaya2007@gmail.com</p>
+      <p>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/ss-akshaya-88a6a4382" target="_blank">
+          View LinkedIn
+        </a>
+      </p>
+      <p>
+        Codepen:
+        <a href="https://codepen.io/ss-akshaya" target="_blank">
+          View Codepen
+        </a>
+      </p>
+    </section>
+
+  </div>
+
+  <!-- ===== JS START ===== -->
+  <script>
+    
+    // Reveal on scroll
+    const cards = document.querySelectorAll(".card");
+    const reveal = () => {
+      const trigger = window.innerHeight - 100;
+      cards.forEach(card => {
+        if(card.getBoundingClientRect().top < trigger){
+          card.style.opacity = 1;
+          card.style.transform = "translateY(0)";
+        }
+      });
+    };
+
+    cards.forEach(card => {
+      card.style.opacity = 0;
+      card.style.transform = "translateY(40px)";
+      card.style.transition = "0.8s ease";
+    });
+
+    window.addEventListener("scroll", reveal);
+
+    // Active nav
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(sec => {
+        if(scrollY >= sec.offsetTop - 150){
+          current = sec.id;
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if(link.getAttribute("href") === `#${current}`){
+          link.classList.add("active");
+        }
+      });
+    });
+
+    // Ripple effect
+    document.querySelectorAll("button").forEach(btn => {
+      btn.addEventListener("click", e => {
+        const ripple = document.createElement("span");
+        ripple.className = "ripple";
+        ripple.style.left = e.offsetX + "px";
+        ripple.style.top = e.offsetY + "px";
+        btn.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+      });
+    });
+
+    // Accent auto change
+    const colors = ["#38bdf8","#a855f7","#22c55e","#f97316"];
+    let i = 0;
+    setInterval(()=>{
+      document.documentElement.style.setProperty("--accent", colors[i]);
+      i = (i+1)%colors.length;
+    },4000);
+  </script>
+  <!-- ===== JS END ===== -->
+
+</body>
+</html>
